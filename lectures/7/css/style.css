@@ -1,6 +1,15 @@
 #main {
-    /* add CSS here */
+    max-width: 405px;
+    max-height: 200px;
+    margin: auto;
 }
 .pet {
-    /* add CSS here */
+
+
+    border-style: dashed;
+
+    border-radius: 10px;
+    box-shadow:9px 13px 1px gray;
+    border-color:#fa0188 ;
 }
+.pointer         { cursor: pointer; }
