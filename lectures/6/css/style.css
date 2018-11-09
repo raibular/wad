@@ -3,6 +3,7 @@
 }
 a {
     color: #70579D;
+<<<<<<< HEAD
 }
 #main{
     max-width: 800px;
@@ -109,4 +110,6 @@ p.lister-item-summary::selection{
 .lister-list>.lister-item>.lister-item-content a{
     text-decoration:none;
     color:#70579D;
+=======
+>>>>>>> remotes/upstream/master
 }
