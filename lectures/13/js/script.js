@@ -72,6 +72,7 @@ function displayNext() {
    else
    {
        displayScore();
+      
 
 
    }
