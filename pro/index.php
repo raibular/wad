@@ -111,6 +111,7 @@ require "server/function.php"
         <div class="row">
             <div class="col">
                 Content
+                <?php getDetails(); ?>
             </div>
         </div>
     </article>
