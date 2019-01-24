@@ -5,7 +5,7 @@ if(!isset($_SESSION['user_email'])){
 }
 if(isset($_POST['insert_btn'])) {
     $pro_title = $_POST['cat_title'];
-    $Query = "insert into Brands(Brands_Title)
+    $Query = "insert into Categories(Cat_Title)
               values('$pro_title')";
     echo $Query;
     mysqli_query($Con, $Query);
@@ -31,19 +31,19 @@ require "function.php"
 </head>
 <body>
 <div class="container">
-    <h1 class="text-center my-4"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Brand </h1>
+    <h1 class="text-center my-4"><i class="fas fa-plus fa-md"></i> <span class="d-none d-sm-inline"> Add New </span> Category </h1>
 
     <form action="" method="post">
         <div class="row">
             <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-2 col-xl-2 mt-auto">
-                <label for="pro_title" class="float-md-right"> <span class="d-sm-none d-md-inline"> Brand </span> Title:</label>
+                <label for="pro_title" class="float-md-right"> <span class="d-sm-none d-md-inline"> Catrgory </span> Title:</label>
             </div>
             <div class="col-sm-9 col-md-8 col-lg-4 col-xl-4">
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-file-signature"></i></div>
                     </div>
-                    <input type="text" class="form-control" id="pro_title" name="cat_title" placeholder="Enter Brand " >
+                    <input type="text" class="form-control" id="pro_title" name="cat_title" placeholder="Enter Cateogry " >
                 </div>
             </div>
         </div>
