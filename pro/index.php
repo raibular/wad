@@ -11,6 +11,19 @@ require "server/functions.php";
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bangers|Old+Standard+TT">
+    <script>
+        function Check(str) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("show").innerHTML = this.responseText;
+                }
+            };
+            xmlhttp.open("GET", "check_search.php?e=" + str, true);
+            xmlhttp.send();
+            //document.getElementById('hint').innerHTML = 'loading...';
+        }
+    </script>
 </head>
 <body>
 
@@ -18,7 +31,7 @@ require "server/functions.php";
     <div class="row">
         <div class="col-12 no-padding">
             <nav class="navbar navbar-light bg-light navbar-expand-sm fixed-top">
-                <a class="navbar-brand" href="index.html"><img src="media/logo.png" width="175" height="50" alt="logo">
+                <a class="navbar-brand" href="index.php"><img src="media/logo.png" width="175" height="50" alt="logo">
                 </a>
                 <button class="navbar-toggler" type="button"
                         data-toggle="collapse"
@@ -29,11 +42,11 @@ require "server/functions.php";
                     <div class="col-lg-8 offset-lg-1 col-md-8 col-sm-7">
                         <form class="form-inline">
                             <div class="input-group">
-                                <input type="search" class="form-control"
-                                       id="search-bar" name="search"
-                                       placeholder="Find Mobile Phones, Laptops, and more..">
+                                <input  type="search" class="form-control"
+                                        id="search-bar" name="search" onkeyup="Check(this.value)"
+                                        placeholder="Find Mobile Phones, Laptops, and more..">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary btn-lg" type="button"><i class="fas fa-search"></i></button>
+                                    <button class="btn btn-outline-secondary btn-lg" type="submit"><i class="fas fa-search"></i></button>
                                 </div>
                             </div>
                         </form>
@@ -95,23 +108,20 @@ require "server/functions.php";
     </nav>
     <article id="content" class="container-fluid bg-white">
 
-        <div class="row">
-            <div class="col">
-                Content
-                <?php getDetails(); ?>
-            </div>
+        <div class="row" id = "show">
+            <?php getPro(); ?>
         </div>
     </article>
 
 
 </div>
 <footer class="container-fluid">
-        <div class="row">
-            <div class="col text-center">
-               &copy; 2019 by Muhammad Ali Makhdoom
-            </div>
+    <div class="row">
+        <div class="col text-center">
+            &copy; 2019 by Muhammad Ali Makhdoom
         </div>
-    </footer>
+    </div>
+</footer>
 <script src="js/jquery-3.3.1.js"></script>
 <script src="js/bootstrap.bundle.js"></script>
 </body>
